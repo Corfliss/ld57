@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba3olmvi80ob1"]
+
+[ext_resource type="Script" uid="uid://bqfvrn3lk8y78" path="res://Character.gd" id="1_oolk3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gaqdb"]
+radius = 40.0
+height = 160.0
+
+[sub_resource type="Gradient" id="Gradient_y8ncq"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gaqdb"]
+gradient = SubResource("Gradient_y8ncq")
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_oolk3"]
+enabled = true
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_oolk3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_gaqdb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.32, 160)
+texture = SubResource("GradientTexture1D_gaqdb")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+modification_stack = SubResource("SkeletonModificationStack2D_oolk3")
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
+auto_calculate_length_and_angle = false
+length = 102.477
+bone_angle = 0.0
