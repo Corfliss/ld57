@@ -14,6 +14,7 @@ width = 1000
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_y8ncq")]
+position = Vector2(14, -664)
 
 [node name="MeshInstance2D" type="StaticBody2D" parent="."]
 position = Vector2(4, 245)
